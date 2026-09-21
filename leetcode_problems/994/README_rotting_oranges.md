@@ -329,51 +329,6 @@ class Solution:
 
 ---
 
-# 9. Important Bug to Avoid
-
-For row validation:
-
-```python
-0 <= nr < rows
-```
-
-For column validation:
-
-```python
-0 <= nc < cols
-```
-
-Do **not** accidentally write:
-
-```python
-0 <= nc < rows
-```
-
-That may appear to work on square matrices because `rows == cols`, but it fails on rectangular matrices.
-
-Example:
-
-```python
-grid = [[2, 1, 1, 1]]
-```
-
-Here:
-
-```text
-rows = 1
-cols = 4
-```
-
-A condition such as:
-
-```python
-0 <= nc < rows
-```
-
-would incorrectly reject columns `1`, `2`, and `3`.
-
----
-
 # 10. Step-by-Step Algorithm
 
 ## Step 1: Scan the grid
